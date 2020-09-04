@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+$font-01: "Barlow",
+sans-serif;
+$font-02: 'Source Code Pro',
+monospace;
+$font-03: 'Rouge Script',
+cursive;
+$m-01: #8638bf;
+$m-02: #8633b5;
+$g-01: linear-gradient(140deg,
+$m-01,
+$m-02);
+$neu-01: #EAEAEA;
+$neu-02: #EDEEF4;
+$neu-03: #6F7073;
+$neu-04: #505050;
+$neu-05: #403E3E;
+$transition: all 0.4s cubic-bezier(0.7,
+0.29,
+0.68,
+1.43);
+@mixin lg {
+    @media screen and (max-width: 1180px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 511px) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (max-width: 434px) {
+        @content;
+    }
+}
+
+@mixin xxxs {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    font-family: $font-01;
+    background: #F7F8FC;
+}
+
+.link {
+    font-size: 15px;
+    color: #7472e0;
+    letter-spacing: 1.5px;
+    position: relative;
+    text-decoration: underline;
+    line-height: 20px;
+}
+
+.mainHeading {
+    background-image: url("../img/dot-grid.png");
+    font-family: $font-02;
+    padding: 60px 5% 60px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @include sm {
+        flex-direction: column;
+    }
+    &__user {
+        width: 50%;
+    }
+    &__wrapperImage {
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+        cursor: pointer;
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            margin-right: 20px;
+        }
+    }
+    &__image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        span {
+            position: absolute;
+            top: 25%;
+            left: 35%;
+            font-size: 96px;
+            color: white;
+            font-weight: 700;
+            font-family: $font-03;
+        }
+    }
+    &__name {
+        background-color: #e4e4ee;
+        border-radius: 2px;
+        padding: 5px 15px;
+        font-size: 20px;
+        font-weight: 400;
+        @include xs {
+            font-size: 16px;
+        }
+        span {
+            background: $g-01;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &__desc {
+        background-color: #e4e4ee;
+        padding: 5px 5px;
+        color: $neu-04;
+        width: fit-content;
+        @include sm {
+            text-align: center;
+            margin: 0 5px 40px 0px;
+        }
+    }
+    &__about {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: center;
+    }
+    &__info {
+        background-color: #e4e4ee;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        font-family: $font-01;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        font-weight: 400;
+        color: $neu-04;
+        width: fit-content;
+        @include xs {
+            font-size: 16px;
+        }
+        &:nth-child(5) {
+            font-family: $font-02;
+            transform: translateY(58px);
+            span {
+                background: $g-01;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            @include sm {
+                transform: translateY(0px);
+            }
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        img {
+            width: 100px;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 50px 5%;
+    @include sm {
+        flex-direction: column;
+        margin: 0 5px;
+    }
+}
+
+.left {
+    width: 50%;
+    @include sm {
+        width: 100%;
+        padding-right: 0px;
+        margin-bottom: 30px;
+    }
+    &__title {
+        background: $g-01;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-family: $font-02;
+        span {
+            padding: 0 10px;
+        }
+    }
+    &__desc {
+        font-family: $font-01;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: $neu-04;
+        line-height: 24px;
+        margin-bottom: 40px;
+        padding-left: 20px;
+        position: relative;
+        &:before {
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 100%;
+            background-color: $neu-03;
+            top: 0;
+            left: 0;
+            opacity: 0.2;
+        }
+    }
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin-bottom: 10px;
+        @include xs {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &__image {
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 2px;
+        img {
+            width: 100%;
+            border: solid 1px $neu-01;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.right {
+    width: 40%;
+    @include sm {
+        width: 100%;
+    }
+    &__software {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__title {
+        background: $g-01;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        span {
+            padding: 0 10px;
+        }
+    }
+    &__iconContent {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    &__icon {
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        border: solid 1px $neu-01;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+        img {
+            width: 18px;
+            height: 18px;
+        }
+        &.kills {
+            width: 70px;
+            height: 70px;
+            @include xs {
+                width: 60px;
+                height: 60px;
+            }
+            @include xxs {
+                width: 50px;
+                height: 50px;
+            }
+            @include xxxs {
+                margin-right: 8px;
+            }
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        &:hover {
+            box-shadow: 0 2px 21px 0 rgba(36, 46, 76, 0.22);
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    &__time {
+        font-family: $font-02;
+        background: $g-01;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: $neu-04;
+        line-height: 24px;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    &__name {
+        font-family: $font-02;
+        font-size: 16px;
+        color: $neu-04;
+        margin-bottom: 6px;
+    }
+    &__desc {
+        color: $neu-03;
+        font-size: 16px;
+    }
+}
